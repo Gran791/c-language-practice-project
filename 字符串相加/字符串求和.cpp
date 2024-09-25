@@ -32,7 +32,7 @@ int shuru(char in[])
 	scanf("%s",in);
 	int f = atoi(in);
 	//printf("###f:%d\n",f);  //µ˜ ‘”√ 
-	if(f < 0 || f > 1000)  //∑∂Œß≈–∂œ 
+	if(f < 1 || f > 1000)  //∑∂Œß≈–∂œ 
 	{
 		error();
 	}
