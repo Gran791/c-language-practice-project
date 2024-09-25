@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 //字符串求和 by 黄冉阳 
 
@@ -13,13 +14,13 @@ int error()
 
 int jisuan(char shu[])
 {
-	int s,f1,f2,f3,f4;
+	int s = 0;
 	//将字符转为数值 
-	f1 = (shu[0]-'0')*8;
-	f2 = (shu[1]-'0')*4;
-	f3 = (shu[2]-'0')*2;
-	f4 = (shu[3]-'0')*1;
-	s = f1+f2+f3+f4;
+	for (int i = 0; i < 4; i++)
+	{
+		int temp = (shu[i]-'0')*pow(2,3-i);
+		s += temp;
+	 } 
 	return s;
 }
 
@@ -28,7 +29,6 @@ int shuru(char in[])
     //获取第一个输入 
 	scanf("%4s",in);
 	int f = atoi(in);
-	//printf("###f:%d\n",f);  //调试用 
 	if(f < 1 || f > 1000)  //范围判断 
 	{
 		error();
@@ -42,9 +42,7 @@ int shuru(char in[])
 		}
 	}
 	
-	//printf("###success\n");  //调试用 
 	int s = jisuan(in);
-	//printf("###s:%d\n",s);  //调试用 
 	return s;
  } 
 
