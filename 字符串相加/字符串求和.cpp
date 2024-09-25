@@ -36,7 +36,7 @@ int shuru(char in[])
 	{
 		error();
 	}
-	for (int i = 0; in[i]!='\0';i++) 
+	for (int i = 0; in[i]!='\0'; i++) 
 	{
 		//printf("%c\n",first[i]);
 		if (in[i] != '0' && in[i] != '1')  //¶þ½øÖÆÅÐ¶Ï 
