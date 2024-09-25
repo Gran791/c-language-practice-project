@@ -4,8 +4,6 @@
 
 //字符串求和 by 黄冉阳 
 
-extern int c = 1;
-
 int error()
 {
 	printf("输入有误，请重新运行\n");
@@ -28,8 +26,7 @@ int jisuan(char shu[])
 int shuru(char in[])
 {
     //获取第一个输入 
-    printf("请输入第%d个二进制数：",c) ; 
-	scanf("%s",in);
+	scanf("%4s",in);
 	int f = atoi(in);
 	//printf("###f:%d\n",f);  //调试用 
 	if(f < 1 || f > 1000)  //范围判断 
@@ -59,8 +56,9 @@ int main()
     printf("仅限四位二进制数，范围0001~1000\n");  //范围可变 
 
 	//获取十进制输入 
+    printf("请输入第1个二进制数：") ; 
 	s1 = shuru(first);
-	c++;
+    printf("请输入第2个二进制数：") ; 
 	s2 = shuru(second);
 	
 	//计算并输出十进制总和 
