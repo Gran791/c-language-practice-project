@@ -35,7 +35,6 @@ int shuru(char in[])
 	}
 	for (int i = 0; in[i] != '\0'; i++) 
 	{
-
 		if (in[i] != '0' && in[i] != '1')  //¶þ½øÖÆÅÐ¶Ï 
 		{
 			error();
