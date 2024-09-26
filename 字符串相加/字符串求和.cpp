@@ -18,7 +18,7 @@ int jisuan(char shu[])
 	//将字符转为数值 
 	for (int i = 0; i < 4; i++)
 	{
-		int temp = (shu[i]-'0')*pow(2,3-i);
+		int temp = (shu[i] - '0') * pow(2, 3-i);
 		s += temp;
 	 } 
 	return s;
@@ -27,15 +27,15 @@ int jisuan(char shu[])
 int shuru(char in[])
 {
     //获取第一个输入 
-	scanf("%4s",in);
+	scanf("%4s", in);
 	int f = atoi(in);
 	if(f < 1 || f > 1000)  //范围判断 
 	{
 		error();
 	}
-	for (int i = 0; in[i]!='\0'; i++) 
+	for (int i = 0; in[i] != '\0'; i++) 
 	{
-		//printf("%c\n",first[i]);
+
 		if (in[i] != '0' && in[i] != '1')  //二进制判断 
 		{
 			error();
@@ -61,7 +61,7 @@ int main()
 	
 	//计算并输出十进制总和 
 	int total = s1 + s2;
-	printf("十进制总和:%d\n",total);
+	printf("十进制总和:%d\n", total);
 	
 	//计算二进制总和 
 	int out[5];
@@ -72,11 +72,11 @@ int main()
 	out[4] = total % 16 % 8 % 4 % 2 / 1;
 	
 	//输出二进制总和 
-	printf("二进制总和:%d",out[0]);
-	printf("%d",out[1]);
-	printf("%d",out[2]);
-	printf("%d",out[3]);
-	printf("%d\n",out[4]);
+	printf("二进制总和:%d", out[0]);
+	printf("%d", out[1]);
+	printf("%d", out[2]);
+	printf("%d", out[3]);
+	printf("%dB\n", out[4]);
 	
 	system("pause");
 	
