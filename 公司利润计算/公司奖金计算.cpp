@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 //企业发放的奖金根据利润提成。
 
@@ -38,7 +39,9 @@ int main()
  	else
  		reward = reward5 + (profit - 100) * 0.010;
  	
- 	printf("获得的奖金（万元）：%f", reward);
+ 	printf("获得的奖金（万元）：%f\n", reward);
+ 	
+ 	system("pause") ;
 	return 0;
  }
 
