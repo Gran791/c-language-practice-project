@@ -81,6 +81,8 @@ int main()
 	{
 		printf("%d", plus[i]);
 	}
-
+	
+	printf("\n");
+	system("pause"); 
 	return 0;
 }
