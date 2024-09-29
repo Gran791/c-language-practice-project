@@ -14,10 +14,10 @@ int main()
 	long number1, number2;
 
 	printf("请输入第一个数：");
-	scanf("%d", &number1);
+	scanf("%ld", &number1);
 
 	printf("请输入第二个数：");
-	scanf("%d", &number2);
+	scanf("%ld", &number2);
 
 
 	//判断与转换部分
