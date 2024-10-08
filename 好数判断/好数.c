@@ -40,9 +40,6 @@ int main(int argc, char *argv[])
 			{
 				sum++;
 			}
-			else
-			{
-			}
 		}
 	}
 	printf("%d", sum);
