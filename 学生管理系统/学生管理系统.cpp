@@ -77,6 +77,7 @@ void menu()
 		    
 		    
 		case 2:  //显示所有信息
+			if (i == -1)  cout << "暂无数据" << endl;
 			for (int p = 0; p <= i; p++)
 			{
 				cout << "第 " << p+1 << " 个学生的名字是：" << list[p].name << " ;年龄是：" << list[p].age 
