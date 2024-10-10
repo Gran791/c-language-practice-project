@@ -26,4 +26,5 @@ int main()
 	}
 	cout << endl << "猜对了！这个数是" << rd << endl;
 
+	system("pause"); 
 }

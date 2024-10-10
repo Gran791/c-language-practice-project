@@ -30,4 +30,6 @@ int main()
 		else if (c == b) cout << "B与C并列最重"; 
 		else cout << "B最重";
 	}
+	cout << endl; 
+	system("pause"); 
 }

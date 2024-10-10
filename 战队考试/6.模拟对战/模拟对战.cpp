@@ -34,4 +34,5 @@ int main()
 	else if (p1_att > p2_att) cout << "玩家1血量：" << p1_hp << "  玩家2血量：" << p2_hp << "  玩家1获胜" << endl; 
 	else cout << "玩家1血量：" << p1_hp << "  玩家2血量：" << p2_hp << "  玩家2获胜" << endl; 
 
+	system("pause"); 
  } 
