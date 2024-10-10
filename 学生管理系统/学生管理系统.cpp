@@ -9,15 +9,15 @@ void menu()
 	int nofound = 1, replace = 0;
     static int i = -1;
 	system("cls");
-	cout << " ª∂”≠¿¥µΩ—ß…˙π‹¿ÌœµÕ≥" << endl << "----------------------" << endl << "|1°¢ÃÌº”—ß…˙–≈œ¢     |" << endl << "|2°¢œ‘ æ—ß…˙À˘”––≈œ¢ |" << endl
-		<< "|3°¢≤È—Ø—ß…˙–≈œ¢     |" << endl << "|4°¢…æ≥˝—ß…˙–≈œ¢     |" << endl << "|0°¢ÕÀ≥ˆ             |" <<endl <<  "----------------------" << endl;
-	cout << "«Î ‰»Î—°œÓ£∫";
+	cout << " Ê¨¢ËøéÊù•Âà∞Â≠¶ÁîüÁÆ°ÁêÜÁ≥ªÁªü" << endl << "----------------------" << endl << "|1„ÄÅÊ∑ªÂä†Â≠¶Áîü‰ø°ÊÅØ     |" << endl << "|2„ÄÅÊòæÁ§∫Â≠¶ÁîüÊâÄÊúâ‰ø°ÊÅØ |" << endl
+		<< "|3„ÄÅÊü•ËØ¢Â≠¶Áîü‰ø°ÊÅØ     |" << endl << "|4„ÄÅÂà†Èô§Â≠¶Áîü‰ø°ÊÅØ     |" << endl << "|0„ÄÅÈÄÄÂá∫             |" <<endl <<  "----------------------" << endl;
+	cout << "ËØ∑ËæìÂÖ•ÈÄâÈ°πÔºö";
 	cin >> decide;
 	system("cls");
 
 	switch (decide)
 	{
-		case 1:  //ÃÌº”–≈œ¢ 
+		case 1:  //Ê∑ªÂä†‰ø°ÊÅØ 
 			i++;
 			int temp_age;
 			char temp_name[10], temp_sex[10];
@@ -32,22 +32,22 @@ void menu()
 					char sex[10];
 			} list[100];
 			
-			cout << "«Î ‰»Î–’√˚£∫";
+			cout << "ËØ∑ËæìÂÖ•ÂßìÂêçÔºö";
 			cin >> temp_name;
-			cout << "«Î ‰»ÎƒÍ¡‰£∫";
+			cout << "ËØ∑ËæìÂÖ•Âπ¥ÈæÑÔºö";
 			cin >> temp_age;
-			cout << "«Î ‰»Î id £∫";
+			cout << "ËØ∑ËæìÂÖ• id Ôºö";
 			cin >> temp_id;
-			cout << "«Î ‰»Î–‘±£∫";
+			cout << "ËØ∑ËæìÂÖ•ÊÄßÂà´Ôºö";
 			cin >> temp_sex;
 			
-			for (int p = 0; p <= i; p++)  //i « ‰»Î£¨p «∂‘±»
+			for (int p = 0; p <= i; p++)  //iÊòØËæìÂÖ•ÔºåpÊòØÂØπÊØî
 			{
 				if (p != i)
 				{
 					if (temp_id == list[p].id)
 					{
-						cout << "“—”–∏√—ß…˙id£°∏√—ß…˙–≈œ¢±ª∏¸–¬" << endl;
+						cout << "Â∑≤ÊúâËØ•Â≠¶ÁîüidÔºÅËØ•Â≠¶Áîü‰ø°ÊÅØË¢´Êõ¥Êñ∞" << endl;
 						list[p].age = temp_age;
 						list[p].id = temp_id;
 						for (int n = 0; n <= 10; n++)
@@ -76,74 +76,75 @@ void menu()
 		    break;	
 		    
 		    
-		case 2:  //œ‘ æÀ˘”––≈œ¢
-			if (i == -1)  cout << "‘›Œﬁ ˝æ›" << endl;
+		case 2:  //ÊòæÁ§∫ÊâÄÊúâ‰ø°ÊÅØ
+			if (i == -1)  cout << "ÊöÇÊó†Êï∞ÊçÆ" << endl;
 			for (int p = 0; p <= i; p++)
 			{
-				cout << "µ⁄ " << p+1 << " ∏ˆ—ß…˙µƒ√˚◊÷ «£∫" << list[p].name << " ;ƒÍ¡‰ «£∫" << list[p].age 
-				<< " ;id «£∫" << list[p].id << " ;–‘± «£∫" << list[p].sex << endl;
+				cout << "Á¨¨ " << p+1 << " ‰∏™Â≠¶ÁîüÁöÑÂêçÂ≠óÊòØÔºö" << list[p].name << " ;Âπ¥ÈæÑÊòØÔºö" << list[p].age 
+				<< " ;idÊòØÔºö" << list[p].id << " ;ÊÄßÂà´ÊòØÔºö" << list[p].sex << endl;
 			}
 
 			system("pause");
 			break;
 			 
 			 
-		case 3:  //≤È—Ø–≈œ¢
+		case 3:  //Êü•ËØ¢‰ø°ÊÅØ
 			long find_id;
 
-			cout << "«Î ‰»Î“™≤È’“µƒ—ß…˙id£∫" ;
+			cout << "ËØ∑ËæìÂÖ•Ë¶ÅÊü•ÊâæÁöÑÂ≠¶ÁîüidÔºö" ;
 			cin >> find_id;
 
 			for (int p = 0; p <= i; p++)
 			{
 				if (find_id == list[p].id)
 				{
-					cout << "µ⁄" << p+1 << "∏ˆ—ß…˙µƒ√˚◊÷ «£∫" << list[p].name << " ; ƒÍ¡‰ «£∫" << list[p].age 
-					<< " ; id «£∫" << list[p].id << " ; –‘± «£∫" << list[p].sex << endl;
+					cout << "Á¨¨" << p+1 << "‰∏™Â≠¶ÁîüÁöÑÂêçÂ≠óÊòØÔºö" << list[p].name << " ; Âπ¥ÈæÑÊòØÔºö" << list[p].age 
+					<< " ; idÊòØÔºö" << list[p].id << " ; ÊÄßÂà´ÊòØÔºö" << list[p].sex << endl;
 					nofound = 0;
 				}
 			}
 
 			if (nofound == 1)
 			{
-				cout << "√ª”–’“µΩ" << endl;
+				cout << "Ê≤°ÊúâÊâæÂà∞" << endl;
 			}
 
 			system("pause");
 			break;
 			
-		case 4:  //…æ≥˝–≈œ¢ 
+		case 4:  //Âà†Èô§‰ø°ÊÅØ 
 			long delete_find_id;
 
-			cout << "«Î ‰»Î“™…æ≥˝µƒ—ß…˙id£∫" ;
+			cout << "ËØ∑ËæìÂÖ•Ë¶ÅÂà†Èô§ÁöÑÂ≠¶ÁîüidÔºö" ;
 			cin >> delete_find_id;
 
 			for (int p = 0; p <= i; p++)
 			{
 				if (delete_find_id == list[p].id)
 				{
-					cout << "µ⁄" << p + 1 << "∏ˆ—ß…˙µƒ√˚◊÷ «£∫" << list[p].name << " ;ƒÍ¡‰ «£∫" << list[p].age
-						<< " ;id «£∫" << list[p].id << " ;–‘± «£∫" << list[p].sex << endl << "“—…æ≥˝∏√—ß…˙–≈œ¢" << endl;
+					cout << "Á¨¨" << p + 1 << "‰∏™Â≠¶ÁîüÁöÑÂêçÂ≠óÊòØÔºö" << list[p].name << " ;Âπ¥ÈæÑÊòØÔºö" << list[p].age
+						<< " ;idÊòØÔºö" << list[p].id << " ;ÊÄßÂà´ÊòØÔºö" << list[p].sex << endl << "Â∑≤Âà†Èô§ËØ•Â≠¶Áîü‰ø°ÊÅØ" << endl;
 					nofound = 0;
 
 					for (p; p <= i; p++)
 					{
 						list[p] = list[p + 1];
 					}
-
+					i--;
+					
 					break;
 				}
 			}
 
 			if (nofound == 1)
 			{
-				cout << "√ª”–’“µΩ∏√—ß…˙" << endl;
+				cout << "Ê≤°ÊúâÊâæÂà∞ËØ•Â≠¶Áîü" << endl;
 			}
 
 			system("pause");
 			break;
 
-		case 0:  //ÕÀ≥ˆ
+		case 0:  //ÈÄÄÂá∫
 			system("pause");
 			exit(0);
 	}
