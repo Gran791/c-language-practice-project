@@ -8,11 +8,14 @@ void menu()
 	int decide;
 	int nofound = 1, replace = 0;
 	static int i = -1;
+	
 	system("cls");
+	
 	cout << " 欢迎来到学生管理系统" << endl << "----------------------" << endl << "|1、添加学生信息     |" << endl << "|2、显示学生所有信息 |" << endl
-		<< "|3、查询学生信息     |" << endl << "|4、删除学生信息     |" << endl << "|0、退出             |" << endl << "----------------------" << endl;
+		 << "|3、查询学生信息     |" << endl << "|4、删除学生信息     |" << endl << "|0、退出             |" << endl << "----------------------" << endl;
 	cout << "请输入选项：";
 	cin >> decide;
+	
 	system("cls");
 
 	switch (decide)
@@ -43,25 +46,22 @@ void menu()
 
 		for (int p = 0; p <= i; p++)  //i是输入，p是对比
 		{
-			if (p != i)
+			if (p != i && temp_id == list[p].id)  //存在学生信息 
 			{
-				if (temp_id == list[p].id)
+				cout << "已有该学生id！该学生信息被更新" << endl;
+				list[p].age = temp_age;
+				list[p].id = temp_id;
+				for (int n = 0; n <= 10; n++)
 				{
-					cout << "已有该学生id！该学生信息被更新" << endl;
-					list[p].age = temp_age;
-					list[p].id = temp_id;
-					for (int n = 0; n <= 10; n++)
-					{
-						list[p].name[n] = temp_name[n];
-						list[p].sex[n] = temp_sex[n];
-					}
-					replace = 1;
-					i--;
+					list[p].name[n] = temp_name[n];
+					list[p].sex[n] = temp_sex[n];
 				}
+				replace = 1;
+				i--;
 			}
 		}
 
-		if (replace == 0)
+		if (replace == 0)  //新学生信息 
 		{
 			list[i].age = temp_age;
 			list[i].id = temp_id;
@@ -81,7 +81,7 @@ void menu()
 		for (int p = 0; p <= i; p++)
 		{
 			cout << "第 " << p + 1 << " 个学生的名字是：" << list[p].name << " ;年龄是：" << list[p].age
-				<< " ;id是：" << list[p].id << " ;性别是：" << list[p].sex << endl;
+				 << " ;id是：" << list[p].id << " ;性别是：" << list[p].sex << endl;
 		}
 
 		system("pause");
@@ -144,7 +144,6 @@ void menu()
 		break;
 
 	case 0:  //退出
-		system("pause");
 		exit(0);
 	}
 }
