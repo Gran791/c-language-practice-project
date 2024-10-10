@@ -1,23 +1,28 @@
 #include <iostream>
+#include <random>
 
 using namespace std;
 
 int main()
 {
+	random_device rd;
+	mt19937 gen(rd());
+	uniform_int_distribution<> dis(0, 100);
+	
 	int list[9];
 
 	cout << "随机数为：";
 	for (int i = 0; i < 9; i++)
 	{
-		list[i] = rand() % 100;
+		list[i] = dis(gen);
 		cout << list[i] << "\t";
 	}
 
-	int alt[9] = {0,0,0,0,0,0,0,0,0};
+	int alt[9] = { 0,0,0,0,0,0,0,0,0 };
 
 	for (int i = 0; i < 9; i++) //遍历list  i
 	{
-		for (int p = 0; p < 9; p++) //遍历alt p
+		for (int p = 0; p < 9; p++) //遍历alt  p
 		{
 			if (list[i] >= alt[p])
 			{
@@ -28,7 +33,6 @@ int main()
 				alt[p] = list[i];
 				break;
 			}
-
 		}
 	}
 
