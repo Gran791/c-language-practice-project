@@ -5,7 +5,7 @@ using namespace std;
 
 void menu()
 {
-	int decide;
+	char decide;
 	int nofound = 1, replace = 0;
 	static int i = -1;
 	
@@ -20,7 +20,7 @@ void menu()
 
 	switch (decide)
 	{
-	case 1:  //添加信息 
+	case '1':  //添加信息 
 		i++;
 		int temp_age;
 		char temp_name[10], temp_sex[10];
@@ -44,9 +44,9 @@ void menu()
 		cout << "请输入性别：";
 		cin >> temp_sex;
 
-		for (int p = 0; p <= i; p++)  //i是输入，p是对比
+		for (int p = 0; p < i; p++)  //i是输入，p是对比
 		{
-			if (p != i && temp_id == list[p].id)  //存在学生信息 
+			if (temp_id == list[p].id)  //存在学生信息 
 			{
 				cout << "已有该学生id！该学生信息被更新" << endl;
 				list[p].age = temp_age;
@@ -76,7 +76,7 @@ void menu()
 		break;
 
 
-	case 2:  //显示所有信息
+	case '2':  //显示所有信息
 		if (i == -1)  cout << "暂无数据" << endl;
 		for (int p = 0; p <= i; p++)
 		{
@@ -88,7 +88,7 @@ void menu()
 		break;
 
 
-	case 3:  //查询信息
+	case '3':  //查询信息
 		long find_id;
 
 		cout << "请输入要查找的学生id：";
@@ -112,7 +112,7 @@ void menu()
 		system("pause");
 		break;
 
-	case 4:  //删除信息 
+	case '4':  //删除信息 
 		long delete_find_id;
 
 		cout << "请输入要删除的学生id：";
@@ -143,15 +143,18 @@ void menu()
 		system("pause");
 		break;
 
-	case 0:  //退出
+	case '0':  //退出
 		exit(0);
+		
+	default:
+		cout << "输入有误，请重试" << endl;
+		system("pause");
+		break;
 	}
 }
 
 int main()
 {
-	static int i = 0;
-
 	while (1)
 	{
 		menu();
