@@ -5,148 +5,147 @@ using namespace std;
 
 void menu()
 {
-    int decide;
+	int decide;
 	int nofound = 1, replace = 0;
-    static int i = -1;
+	static int i = -1;
 	system("cls");
-	cout << " Ê¨¢ËøéÊù•Âà∞Â≠¶ÁîüÁÆ°ÁêÜÁ≥ªÁªü" << endl << "----------------------" << endl << "|1„ÄÅÊ∑ªÂä†Â≠¶Áîü‰ø°ÊÅØ     |" << endl << "|2„ÄÅÊòæÁ§∫Â≠¶ÁîüÊâÄÊúâ‰ø°ÊÅØ |" << endl
-		<< "|3„ÄÅÊü•ËØ¢Â≠¶Áîü‰ø°ÊÅØ     |" << endl << "|4„ÄÅÂà†Èô§Â≠¶Áîü‰ø°ÊÅØ     |" << endl << "|0„ÄÅÈÄÄÂá∫             |" <<endl <<  "----------------------" << endl;
-	cout << "ËØ∑ËæìÂÖ•ÈÄâÈ°πÔºö";
+	cout << " ª∂”≠¿¥µΩ—ß…˙π‹¿ÌœµÕ≥" << endl << "----------------------" << endl << "|1°¢ÃÌº”—ß…˙–≈œ¢     |" << endl << "|2°¢œ‘ æ—ß…˙À˘”––≈œ¢ |" << endl
+		<< "|3°¢≤È—Ø—ß…˙–≈œ¢     |" << endl << "|4°¢…æ≥˝—ß…˙–≈œ¢     |" << endl << "|0°¢ÕÀ≥ˆ             |" << endl << "----------------------" << endl;
+	cout << "«Î ‰»Î—°œÓ£∫";
 	cin >> decide;
 	system("cls");
 
 	switch (decide)
 	{
-		case 1:  //Ê∑ªÂä†‰ø°ÊÅØ 
-			i++;
-			int temp_age;
-			char temp_name[10], temp_sex[10];
-			long temp_id;
+	case 1:  //ÃÌº”–≈œ¢ 
+		i++;
+		int temp_age;
+		char temp_name[10], temp_sex[10];
+		long temp_id;
 
-		    static struct student
+		static struct student
+		{
+		public:
+			char name[10];
+			int age;
+			long id;
+			char sex[10];
+		} list[100];
+
+		cout << "«Î ‰»Î–’√˚£∫";
+		cin >> temp_name;
+		cout << "«Î ‰»ÎƒÍ¡‰£∫";
+		cin >> temp_age;
+		cout << "«Î ‰»Î id £∫";
+		cin >> temp_id;
+		cout << "«Î ‰»Î–‘±£∫";
+		cin >> temp_sex;
+
+		for (int p = 0; p <= i; p++)  //i « ‰»Î£¨p «∂‘±»
+		{
+			if (p != i)
 			{
-				public:
-					char name[10];
-					int age;
-					long id;
-					char sex[10];
-			} list[100];
-			
-			cout << "ËØ∑ËæìÂÖ•ÂßìÂêçÔºö";
-			cin >> temp_name;
-			cout << "ËØ∑ËæìÂÖ•Âπ¥ÈæÑÔºö";
-			cin >> temp_age;
-			cout << "ËØ∑ËæìÂÖ• id Ôºö";
-			cin >> temp_id;
-			cout << "ËØ∑ËæìÂÖ•ÊÄßÂà´Ôºö";
-			cin >> temp_sex;
-			
-			for (int p = 0; p <= i; p++)  //iÊòØËæìÂÖ•ÔºåpÊòØÂØπÊØî
-			{
-				if (p != i)
+				if (temp_id == list[p].id)
 				{
-					if (temp_id == list[p].id)
+					cout << "“—”–∏√—ß…˙id£°∏√—ß…˙–≈œ¢±ª∏¸–¬" << endl;
+					list[p].age = temp_age;
+					list[p].id = temp_id;
+					for (int n = 0; n <= 10; n++)
 					{
-						cout << "Â∑≤ÊúâËØ•Â≠¶ÁîüidÔºÅËØ•Â≠¶Áîü‰ø°ÊÅØË¢´Êõ¥Êñ∞" << endl;
-						list[p].age = temp_age;
-						list[p].id = temp_id;
-						for (int n = 0; n <= 10; n++)
-						{
-							list[p].name[n] = temp_name[n];
-							list[p].sex[n] = temp_sex[n];
-						}
-						replace = 1;
-						i--;
+						list[p].name[n] = temp_name[n];
+						list[p].sex[n] = temp_sex[n];
 					}
-				}
-			}
-			
-			if (replace == 0)
-			{
-				list[i].age = temp_age;
-				list[i].id = temp_id;
-				for (int n = 0; n <= 10; n++)
-				{
-					list[i].name[n] = temp_name[n];
-					list[i].sex[n] = temp_sex[n];
-				}
-			}
-
-			system("pause");
-		    break;	
-		    
-		    
-		case 2:  //ÊòæÁ§∫ÊâÄÊúâ‰ø°ÊÅØ
-			if (i == -1)  cout << "ÊöÇÊó†Êï∞ÊçÆ" << endl;
-			for (int p = 0; p <= i; p++)
-			{
-				cout << "Á¨¨ " << p+1 << " ‰∏™Â≠¶ÁîüÁöÑÂêçÂ≠óÊòØÔºö" << list[p].name << " ;Âπ¥ÈæÑÊòØÔºö" << list[p].age 
-				<< " ;idÊòØÔºö" << list[p].id << " ;ÊÄßÂà´ÊòØÔºö" << list[p].sex << endl;
-			}
-
-			system("pause");
-			break;
-			 
-			 
-		case 3:  //Êü•ËØ¢‰ø°ÊÅØ
-			long find_id;
-
-			cout << "ËØ∑ËæìÂÖ•Ë¶ÅÊü•ÊâæÁöÑÂ≠¶ÁîüidÔºö" ;
-			cin >> find_id;
-
-			for (int p = 0; p <= i; p++)
-			{
-				if (find_id == list[p].id)
-				{
-					cout << "Á¨¨" << p+1 << "‰∏™Â≠¶ÁîüÁöÑÂêçÂ≠óÊòØÔºö" << list[p].name << " ; Âπ¥ÈæÑÊòØÔºö" << list[p].age 
-					<< " ; idÊòØÔºö" << list[p].id << " ; ÊÄßÂà´ÊòØÔºö" << list[p].sex << endl;
-					nofound = 0;
-				}
-			}
-
-			if (nofound == 1)
-			{
-				cout << "Ê≤°ÊúâÊâæÂà∞" << endl;
-			}
-
-			system("pause");
-			break;
-			
-		case 4:  //Âà†Èô§‰ø°ÊÅØ 
-			long delete_find_id;
-
-			cout << "ËØ∑ËæìÂÖ•Ë¶ÅÂà†Èô§ÁöÑÂ≠¶ÁîüidÔºö" ;
-			cin >> delete_find_id;
-
-			for (int p = 0; p <= i; p++)
-			{
-				if (delete_find_id == list[p].id)
-				{
-					cout << "Á¨¨" << p + 1 << "‰∏™Â≠¶ÁîüÁöÑÂêçÂ≠óÊòØÔºö" << list[p].name << " ;Âπ¥ÈæÑÊòØÔºö" << list[p].age
-						<< " ;idÊòØÔºö" << list[p].id << " ;ÊÄßÂà´ÊòØÔºö" << list[p].sex << endl << "Â∑≤Âà†Èô§ËØ•Â≠¶Áîü‰ø°ÊÅØ" << endl;
-					nofound = 0;
-
-					for (p; p <= i; p++)
-					{
-						list[p] = list[p + 1];
-					}
+					replace = 1;
 					i--;
-					
-					break;
 				}
 			}
+		}
 
-			if (nofound == 1)
+		if (replace == 0)
+		{
+			list[i].age = temp_age;
+			list[i].id = temp_id;
+			for (int n = 0; n <= 10; n++)
 			{
-				cout << "Ê≤°ÊúâÊâæÂà∞ËØ•Â≠¶Áîü" << endl;
+				list[i].name[n] = temp_name[n];
+				list[i].sex[n] = temp_sex[n];
 			}
+		}
 
-			system("pause");
-			break;
+		system("pause");
+		break;
 
-		case 0:  //ÈÄÄÂá∫
-			system("pause");
-			exit(0);
+
+	case 2:  //œ‘ æÀ˘”––≈œ¢
+		if (i == -1)  cout << "‘›Œﬁ ˝æ›" << endl;
+		for (int p = 0; p <= i; p++)
+		{
+			cout << "µ⁄ " << p + 1 << " ∏ˆ—ß…˙µƒ√˚◊÷ «£∫" << list[p].name << " ;ƒÍ¡‰ «£∫" << list[p].age
+				<< " ;id «£∫" << list[p].id << " ;–‘± «£∫" << list[p].sex << endl;
+		}
+
+		system("pause");
+		break;
+
+
+	case 3:  //≤È—Ø–≈œ¢
+		long find_id;
+
+		cout << "«Î ‰»Î“™≤È’“µƒ—ß…˙id£∫";
+		cin >> find_id;
+
+		for (int p = 0; p <= i; p++)
+		{
+			if (find_id == list[p].id)
+			{
+				cout << "µ⁄" << p + 1 << "∏ˆ—ß…˙µƒ√˚◊÷ «£∫" << list[p].name << " ; ƒÍ¡‰ «£∫" << list[p].age
+					<< " ; id «£∫" << list[p].id << " ; –‘± «£∫" << list[p].sex << endl;
+				nofound = 0;
+			}
+		}
+
+		if (nofound == 1)
+		{
+			cout << "√ª”–’“µΩ" << endl;
+		}
+
+		system("pause");
+		break;
+
+	case 4:  //…æ≥˝–≈œ¢ 
+		long delete_find_id;
+
+		cout << "«Î ‰»Î“™…æ≥˝µƒ—ß…˙id£∫";
+		cin >> delete_find_id;
+
+		for (int p = 0; p <= i; p++)
+		{
+			if (delete_find_id == list[p].id)
+			{
+				cout << "µ⁄" << p + 1 << "∏ˆ—ß…˙µƒ√˚◊÷ «£∫" << list[p].name << " ;ƒÍ¡‰ «£∫" << list[p].age
+					<< " ;id «£∫" << list[p].id << " ;–‘± «£∫" << list[p].sex << endl << "“—…æ≥˝∏√—ß…˙–≈œ¢" << endl;
+				nofound = 0;
+
+				for (p; p <= i; p++)
+				{
+					list[p] = list[p + 1];
+				}
+				i-- ;
+				break;
+			}
+		}
+
+		if (nofound == 1)
+		{
+			cout << "√ª”–’“µΩ∏√—ß…˙" << endl;
+		}
+
+		system("pause");
+		break;
+
+	case 0:  //ÕÀ≥ˆ
+		system("pause");
+		exit(0);
 	}
 }
 
@@ -154,8 +153,8 @@ int main()
 {
 	static int i = 0;
 
-    while (1)
-    {
-        menu();
-    }
+	while (1)
+	{
+		menu();
+	}
 }
