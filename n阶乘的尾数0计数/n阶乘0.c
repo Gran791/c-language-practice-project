@@ -8,19 +8,19 @@ int main()
     printf("Enter n: ");
     scanf_s("%lld", &n);
 
-    for (int i = n - 1; i > 0; i--) //è®¡ç®—é˜¶ä¹˜
+    for (int i = n - 1; i > 0; i--) //¼ÆËã½×³Ë
         n *= i;
 
     printf("n! = %lld\n", n);
 
     int count = 0;
-    while (n % 10 == 0) //è®¡ç®—æœ«å°¾0çš„ä¸ªæ•°
+    while (n % 10 == 0) //¼ÆËãÄ©Î²0µÄ¸öÊý
     {
         count++;
         n /= 10;
     }
 
-    printf("n!æœ«å°¾0çš„ä¸ªæ•°ä¸ºï¼š%d", count);
+    printf("n!Ä©Î²0µÄ¸öÊýÎª£º%d\n", count);
     system("pause");
     return 0;
 }
