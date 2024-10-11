@@ -24,14 +24,14 @@ int main()
 	{
 		for (int p = 0; p < 9; p++) //遍历alt  p
 		{
-			if (list[i] >= alt[p])
+			if (list[i] >= alt[p]) 
 			{
-				for (int j = 7; j >= p; j--)
+				for (int j = 7; j >= p; j--) //将元素往后移
 				{
 					alt[j + 1] = alt[j];
 				}
-				alt[p] = list[i];
-				break;
+				alt[p] = list[i]; //插入alt中
+				break; //跳出alt的遍历
 			}
 		}
 	}
