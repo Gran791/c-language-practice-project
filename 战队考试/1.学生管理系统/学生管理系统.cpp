@@ -107,7 +107,7 @@ void menu()
 
 		if (nofound == 1)
 		{
-			cout << "没有找到" << endl;
+			cout << "没有找到该学生" << endl;
 		}
 
 		system("pause");
@@ -147,7 +147,7 @@ void menu()
 	case '0':  //退出
 		exit(0);
 		
-	default: 
+	default:  //输入有误 
 		cout << "输入有误，请重试" << endl;
 		system("pause");
 		break;
