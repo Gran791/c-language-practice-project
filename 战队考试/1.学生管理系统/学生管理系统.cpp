@@ -22,16 +22,17 @@ void menu()
 	{
 	case '1':  //添加信息 
 		i++;
+		
 		int temp_age;
 		char temp_name[10], temp_sex[10];
-		long temp_id;
+		unsigned long long temp_id;
 
 		static struct student
 		{
 		public:
 			char name[10];
 			int age;
-			long id;
+			unsigned long long id;
 			char sex[10];
 		} list[100];
 
@@ -146,7 +147,7 @@ void menu()
 	case '0':  //退出
 		exit(0);
 		
-	default:
+	default: 
 		cout << "输入有误，请重试" << endl;
 		system("pause");
 		break;
