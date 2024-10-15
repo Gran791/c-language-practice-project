@@ -3,6 +3,21 @@
 
 using namespace std;
 
+static struct student
+		{
+		public:
+			char name[10];
+			int age;
+			unsigned long long id;
+			char sex[10];
+		} list[100];  //最多存100个学生信息 
+
+void out(int p, struct student *p_list)
+{
+	cout << "第 " << p + 1 << " 个学生的名字是：" << p_list->name << " ;年龄是：" << p_list->age
+		<< " ;id是：" << p_list->id << " ;性别是：" << p_list->sex << endl;
+}
+
 void menu()
 {
 	char decide;
@@ -26,15 +41,6 @@ void menu()
 		int temp_age;
 		char temp_name[10], temp_sex[10];
 		unsigned long long temp_id;
-
-		static struct student
-		{
-		public:
-			char name[10];
-			int age;
-			unsigned long long id;
-			char sex[10];
-		} list[100];
 
 		cout << "请输入姓名：";
 		cin >> temp_name;
@@ -81,8 +87,7 @@ void menu()
 		if (i == -1)  cout << "暂无数据" << endl;
 		for (int p = 0; p <= i; p++)
 		{
-			cout << "第 " << p + 1 << " 个学生的名字是：" << list[p].name << " ;年龄是：" << list[p].age
-				 << " ;id是：" << list[p].id << " ;性别是：" << list[p].sex << endl;
+			out(p, &list[p]);
 		}
 
 		system("pause");
@@ -99,8 +104,7 @@ void menu()
 		{
 			if (find_id == list[p].id)
 			{
-				cout << "第" << p + 1 << "个学生的名字是：" << list[p].name << " ; 年龄是：" << list[p].age
-					<< " ; id是：" << list[p].id << " ; 性别是：" << list[p].sex << endl;
+				out(p, &list[p]);
 				nofound = 0;
 			}
 		}
@@ -123,14 +127,15 @@ void menu()
 		{
 			if (delete_find_id == list[p].id)
 			{
-				cout << "第" << p + 1 << "个学生的名字是：" << list[p].name << " ;年龄是：" << list[p].age
-					<< " ;id是：" << list[p].id << " ;性别是：" << list[p].sex << endl << "已删除该学生信息" << endl;
+				out(p, &list[p]);
+				cout << "已删除该学生信息" << endl;
 				nofound = 0;
 
-				for (p; p <= i; p++)
+				for (p; p <= i; p++)  //进位 
 				{
 					list[p] = list[p + 1];
 				}
+				
 				i-- ;
 				break;
 			}
