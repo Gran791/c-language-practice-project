@@ -1,34 +1,35 @@
+#include <iostream>
 #include <stdio.h>
-#include <random>
-
+#include <stdlib.h>
 using namespace std;
-
 int main()
 {
-	random_device rd;
-	mt19937 gen(rd());
-	uniform_int_distribution<> dis(0, 100);
-	int arr[8];
-	printf("随机数为: ");
-	for (int i = 0; i < 8; i++)
+	// 请在此输入您的代码
+	int cup, teapot, want;
+	scanf("%d %d %d", &cup, &teapot, &want);
+	char inf[1000] = { '0' };
+	int num[1000] = { 0 };
+	scanf("%s", inf);
+	int d = 0;
+	for (int i = 0; inf[i] != '0'; i++)
 	{
-		arr[i] = dis(gen);
-		printf("%d ", arr[i]);
-	}
-	printf("\n");
-	for (int i = 0; i < 8; i++)
-	{
-		for (int j = 0; j < 7 - i; j++)
+		if (inf[i] != ' ');
 		{
-			if (arr[j] > arr[j + 1])
+			num[d] = inf[i] - '0';
+		}
+	}
+
+	for (int i = 0; num[i] != 0; i++)
+	{
+		for (int j = 0; num[j + 1] != 0; j++)
+		{
+			if (num[j] > num[j + 1])
 			{
-				swap(arr[j], arr[j + 1]);
+				swap(num[j], num[j + 1]);
 			}
 		}
 	}
-	printf("冒泡排序后: ");
-	for (int i = 7; i >= 0; i--)
-	{
-		printf("%d ", arr[i]);
-	}
+
+
+	return 0;
 }
