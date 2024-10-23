@@ -1,0 +1,9 @@
+    // 站点名称数组，包含星号
+    string stations[6] = {
+        "*Canton_tower*", // 广州塔，始发站
+        "*Lin_he_dong*", // 林和东
+        "*Tao_jin*", // 桃金
+        "*Zhu_jiang_xin_chen*", // 珠江新城
+        "*Tian_he*", // 天河
+        "*Shi_pai*" // 石牌桥
+    };
