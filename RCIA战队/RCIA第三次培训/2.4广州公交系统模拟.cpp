@@ -28,7 +28,7 @@ double calculate_price(int station, int type)
         price *= 0.8;
 
     //调试用 调试用 调试用 调试用 调试用 
-    cout << "---优惠类型：" << type << "，乘坐站点数：" << station << "，价格：" << price << endl;
+    //cout << "---优惠类型：" << type << "，乘坐站点数：" << station << "，价格：" << price << endl;
 
     return price;
 }

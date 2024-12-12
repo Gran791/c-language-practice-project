@@ -25,7 +25,7 @@ void CoverFile(str line, int non)
     time(&login_time);
     for (int i = 0; i < line.size(); i++)
     {
-        if (line.at(i) == '\0')
+        if (line.at(i) == '\0' || line.at(i) == ' ')
         {
             line.at(i) = ' ';
             count++;
@@ -36,7 +36,7 @@ void CoverFile(str line, int non)
             fprintf(temp_data, " %lld\n", login_time);
             break;
         }
-        else
+        else 
         {
             //printf("%c", line.at(i)); // µ÷ÊÔÓÃ
             fprintf(temp_data, "%c", line[i]);

@@ -1,0 +1,16 @@
+Top left corner x y :		85 100
+Bottom right corner x y:	725 530
+
+Color		R，G，B
+White		230,218,230
+Yellow		240,210,14
+Light_blue	55,240,206
+Green		16,234,8
+Pink		255,0,255
+Red		170,0,0
+Blue		12,0,198
+Purple		186,0,200
+Black		0,0,0
+
+
+#注意,在OpenCv中颜色一般按BGR排列。
